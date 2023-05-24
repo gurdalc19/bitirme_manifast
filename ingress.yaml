@@ -4,24 +4,6 @@ metadata:
   name: bitirme-ingress
   namespace: bitirme-ns
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /bitirme-first
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: bitirme-service-1
-            port:
-              number: 80
-      - path: /*
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: bitirme-service-2
-            port:
-              number: 80
-spec:
   defaultBackend:
     service:
       name: bitirme-service-1
@@ -41,6 +23,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: bitirme-service-1
+            name: bitirme-service-2
             port:
               number: 80            
