@@ -7,14 +7,14 @@ spec:
   rules:
   - http:
       paths:
-      - path: /bitirme-first/*
+      - path: /bitirme-first
         pathType: ImplementationSpecific
         backend:
           service:
             name: bitirme-service-1
             port:
               number: 80
-      - path: /bitirme-next/*
+      - path: /*
         pathType: ImplementationSpecific
         backend:
           service:
