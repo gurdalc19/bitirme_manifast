@@ -27,3 +27,20 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: 
+  namespace: bitirme_ns
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: bitirme-app
+  type: NodePort
+---
