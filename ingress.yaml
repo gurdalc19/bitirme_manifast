@@ -14,7 +14,7 @@ spec:
             name: bitirme-service-1
             port:
               number: 8080
-      - path: /bitirme-next
+      - path: /bitirme-next/*
         pathType: ImplementationSpecific
         backend:
           service:
