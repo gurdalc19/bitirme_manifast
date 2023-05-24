@@ -13,11 +13,11 @@ spec:
           service:
             name: bitirme-service-1
             port:
-              number: 80
+              number: 8080
       - path: /bitirme-next
         pathType: ImplementationSpecific
         backend:
           service:
             name: bitirme-service-2
             port:
-              number: 80
+              number: 8080
