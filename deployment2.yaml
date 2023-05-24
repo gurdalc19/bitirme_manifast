@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: bitime-container2
-        image: us-west1-docker.pkg.dev/bitirme-387623/bitirme/bitirme_img2:latest
+        image: us-west1-docker.pkg.dev/bitirme-387623/bitirme/bitirme_img2:5
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
