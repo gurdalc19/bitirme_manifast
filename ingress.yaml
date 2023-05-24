@@ -21,3 +21,26 @@ spec:
             name: bitirme-service-2
             port:
               number: 80
+spec:
+  defaultBackend:
+    service:
+      name: bitirme-service-1
+      port:
+        number: 80
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: bitirme-service-1
+            port:
+              number: 3000
+      - path: /bitirme2
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: bitirme-service-1
+            port:
+              number: 80            
