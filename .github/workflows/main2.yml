@@ -1,0 +1,35 @@
+name: Second Workflow 2
+
+on:
+  repository_dispatch:
+    types: [second-workflow2]
+
+jobs:
+  modify-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: Modify File
+        run: |
+          cat deployment2.yaml
+          sed -i 's+us-west1-docker.pkg.dev/bitirme-387623/bitirme/bitirme2_img.*+us-west1-docker.pkg.dev/bitirme-387623/bitirme/bitirme2_img:${{ github.event.client_payload.version2 }}+g' deployment2.yaml
+          cat deployment2.yaml
+          
+      - name: Add changes
+        run: |
+          git config --global user.email "gurdalc19@itu.edu.tr"
+          git config --global user.name "gurdalc19"
+          git add .
+      - name: Commit changes
+        run: |
+          git commit -m "Commit message"
+          
+      - name: Push 
+        run: |
+          git push https://github.com/gurdalc19/bitirme_manifast.git HEAD:main
+           
