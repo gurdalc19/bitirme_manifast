@@ -18,6 +18,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: bitirme-service-1
+            name: bitirme-service-2
             port:
               number: 80
