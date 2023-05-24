@@ -13,4 +13,11 @@ spec:
           service:
             name: bitirme-service-1
             port:
-              number: 3000    
+              number: 80  
+      - path: /bitirme2
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: bitirme-service-2
+            port:
+              number: 80              
