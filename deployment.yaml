@@ -34,6 +34,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: bitirme-service-1
+  namespace: bitirme_ns
 spec:
   selector:
     app: bitirme-app 
