@@ -26,4 +26,4 @@ spec:
         image: us-west1-docker.pkg.dev/bitirme-387623/bitirme/bitirme_img:22
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
