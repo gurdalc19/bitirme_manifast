@@ -4,11 +4,6 @@ metadata:
   name: bitirme-ingress
   namespace: bitirme-ns
 spec:
-  defaultBackend:
-    service:
-      name: bitirme-service-1
-      port:
-        number: 80
   rules:
   - http:
       paths:
