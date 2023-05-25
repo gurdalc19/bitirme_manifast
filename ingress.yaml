@@ -1,21 +1,26 @@
-apiVersion: k8s.nginx.org/v1
-kind: VirtualServer
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: bitirme-vs
+  name: bitirme-ingress
   namespace: bitirme-ns
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "35.212.214.250"
 spec:
-  host: 34.145.54.97
-  upstreams:
-  - name: bitirme1
-    service: bitirme-service-1
-    port: 8080
-  - name: bitirme2
-    service: bitirme-service-2
-    port: 8081
-  routes:
-  - path: /bitirme1
-    action:
-      pass: bitirme1
-  - path: /bitirme2
-    action:
-      pass: bitirme2
+  rules:
+  - http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service: 
+            name: bitirme-service-1
+            port:
+              number: 8080
+      - path: /v2
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: bitirme-service-2
+            port:
+              number: 8081
