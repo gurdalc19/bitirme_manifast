@@ -8,17 +8,18 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: "bitirme-ingress"
 spec:
   rules:
-  - http:
+  - host: cangurdal.social
+    http:
       paths:
-      - path: /*
-        pathType: ImplementationSpecific
+      - path: /v1
+        pathType: Prefix
         backend:
           service: 
             name: bitirme-service-1
             port:
               number: 8080
       - path: /v2
-        pathType: ImplementationSpecific
+        pathType: Prefix
         backend:
           service:
             name: bitirme-service-2
