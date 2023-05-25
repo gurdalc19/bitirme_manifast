@@ -1,0 +1,19 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: bitirme-vs
+spec:
+  upstreams:
+  - name: bitirme1
+    service: bitirme-service-1
+    port: 8080
+  - name: bitirme2
+    service: bitirme-service-2
+    port: 8081
+  routes:
+  - path: /bitirme1
+    action:
+      pass: bitirme1
+  - path: /bitirme2
+    action:
+      pass: bitirme2
