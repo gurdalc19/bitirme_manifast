@@ -4,7 +4,7 @@ metadata:
   name: bitirme-vs
   namespace: bitirme-ns
 spec:
-  host: "34.145.54.97"
+  host: 34.145.54.97
   upstreams:
   - name: bitirme1
     service: bitirme-service-1
