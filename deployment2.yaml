@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
       - name: bitime-container2
-        image: us-west1-docker.pkg.dev/bitirme-387623/bitirme/bitirme2_img:10
+        image: us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ---
 
@@ -32,6 +32,6 @@ spec:
     app: bitirme-app2
   ports:
     - port: 8081
-      targetPort: 80
+      targetPort: 8080
   type: NodePort
   
