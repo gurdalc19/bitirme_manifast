@@ -18,7 +18,7 @@ spec:
             name: bitirme-service-1
             port:
               number: 8080
-      - path: /index.html
+      - path: /v2
         pathType: Prefix
         backend:
           service:
