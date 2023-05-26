@@ -11,8 +11,8 @@ spec:
   - host: cangurdal.social
     http:
       paths:
-      - path: /*
-        pathType: Prefix
+      - path: /
+        pathType: ImplementationSpecific
         backend:
           service: 
             name: bitirme-service-1
